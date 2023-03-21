@@ -70,17 +70,29 @@ function averageEvenElementsWorker(...arr) {
 return result;
 }
 
-function makeWork (arrOfArr, ...func) {
+// function makeWork (arrOfArr, ...func) {
+//   let maxWorkerResult = -Infinity;
+//   if (arrOfArr.length == 0) {
+//     maxWorkerResult = 0;
+//   } else {
+//     for (let i = 0; i < arrOfArr.length; i++) {
+//       const funcResult = func[i % func.length].apply(null, arrOfArr[i]);
+//       if (funcResult > maxWorkerResult) {
+//         maxWorkerResult = funcResult;
+//       }
+//     }
+//   }
+//   return maxWorkerResult;
+// }
+
+function makeWork (arrOfArr, func) {
   let maxWorkerResult = -Infinity;
-  if (arrOfArr.length == 0) {
-    maxWorkerResult = 0;
-  } else {
+
     for (let i = 0; i < arrOfArr.length; i++) {
-      const funcResult = func[i % func.length].apply(null, arrOfArr[i]);
+      const funcResult = func(...arrOfArr[i]);
       if (funcResult > maxWorkerResult) {
         maxWorkerResult = funcResult;
       }
     }
-  }
   return maxWorkerResult;
 }
