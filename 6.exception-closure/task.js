@@ -38,8 +38,8 @@ class Triangle {
         (semiPerimeter - this.firstSide) *
         (semiPerimeter - this.secondSide) *
         (semiPerimeter - this.thirdSide)
-    );
-    return area.toFixed(3);
+    ).toFixed(3);
+    return Number(area);
   }
 }
 
