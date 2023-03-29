@@ -10,7 +10,6 @@ function validateCount(value) {
     return parseCount(value);
   } catch (error) {
     return error;
-  } finally {
   }
 }
 class Triangle {
